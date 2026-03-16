@@ -21,7 +21,6 @@ export function ObservationSummaryCard({ className = '', weather, astronomy }) {
       eyebrow="Observation status"
       title="Current sky quality"
       icon={<CompassIcon className="h-5 w-5" />}
-      footer="Score combines cloud cover, visibility, and wind. Astronomy overlays remain local and client-side."
     >
       <div className="space-y-5">
         <div className="flex items-end justify-between gap-4">

@@ -33,7 +33,6 @@ export function VisibleConstellationsCard({ className = '', constellations }) {
       eyebrow="Skywatching targets"
       title="Visible constellations"
       icon={<EyeIcon className="h-5 w-5" />}
-      footer="Constellation visibility is estimated from representative sky positions and the observer’s current coordinates."
     >
       <div className="space-y-4">
         <p className="text-sm leading-6 text-slate-300">

@@ -1,7 +1,7 @@
 export function SectionCard({ className = '', eyebrow, title, icon, children, footer }) {
   return (
     <section className={`panel ${className}`}>
-      <div className="relative z-10 flex h-full flex-col gap-5">
+      <div className="relative z-10 flex flex-col gap-5">
         <header className="flex items-start justify-between gap-4">
           <div>
             {eyebrow ? (
@@ -21,7 +21,7 @@ export function SectionCard({ className = '', eyebrow, title, icon, children, fo
 
         <div className="hairline" />
 
-        <div className="relative z-10 flex-1">{children}</div>
+        <div className="relative z-10">{children}</div>
 
         {footer ? <div className="pt-1 text-xs text-slate-400">{footer}</div> : null}
       </div>

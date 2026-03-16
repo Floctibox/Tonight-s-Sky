@@ -51,7 +51,7 @@ export default function App() {
         ) : !hasData ? (
           <ErrorPanel error={error} onRetry={refresh} />
         ) : (
-          <main className="grid auto-rows-fr gap-6 xl:grid-cols-12">
+          <main className="grid auto-rows-min gap-6 xl:grid-cols-12 items-start">
             <ObservationSummaryCard
               className="xl:col-span-4"
               weather={weather}
@@ -70,7 +70,6 @@ export default function App() {
             />
 
             <SkyMapCard className="xl:col-span-7" location={location} />
-            <TransitCard className="xl:col-span-5" transits={astronomy.transits} />
           </main>
         )}
 

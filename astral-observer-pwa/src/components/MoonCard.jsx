@@ -9,7 +9,6 @@ export function MoonCard({ className = '', moon }) {
       eyebrow="Lunar state"
       title="Moon phase"
       icon={<MoonIcon className="h-5 w-5" />}
-      footer="Quarter phases are calculated locally with Astronomy Engine."
     >
       <div className="space-y-5">
         <div className="flex items-center gap-4">

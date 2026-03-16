@@ -3,12 +3,10 @@ import { CloudIcon, EyeIcon } from './ui/icons';
 import { SectionCard } from './ui/SectionCard';
 
 export function WeatherTimelineCard({ className = '', weather }) {
-  // Filter to show hours until next sunrise
   const now = new Date();
   const today = weather.daily?.[0];
   const tomorrow = weather.daily?.[1];
 
-  // Use tomorrow's sunrise if today is already past sunrise, otherwise use today's
   let nextSunrise = null;
   if (today?.sunrise) {
     const todaySunrise = new Date(today.sunrise);
@@ -31,7 +29,6 @@ export function WeatherTimelineCard({ className = '', weather }) {
         eyebrow="Next 12 hours"
         title="Visibility timeline"
         icon={<CloudIcon className="h-5 w-5" />}
-        footer="Times come from Open-Meteo and are returned in the forecast location’s local timezone."
       >
         <div className="space-y-4">
           <div className="flex items-center justify-between gap-4 text-sm text-slate-400">

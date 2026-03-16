@@ -124,7 +124,6 @@ export function SkyMapCard({ className = '', location }) {
       eyebrow="Interactive sky"
       title="Live star map"
       icon={<MapIcon className="h-5 w-5" />}
-      footer="Drag, zoom, and inspect the sky from your current observing position."
     >
       <div className="space-y-4">
         <p className="text-sm leading-6 text-slate-300">

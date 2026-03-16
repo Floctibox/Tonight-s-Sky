@@ -17,9 +17,8 @@ export function AstronomyAgendaCard({ className = '', agenda }) {
       eyebrow="Astronomy agenda"
       title="Upcoming celestial events"
       icon={<CalendarIcon className="h-5 w-5" />}
-      footer="Meteor shower windows use bundled recurring datasets. Eclipses, moon phases, and conjunctions are calculated locally."
     >
-      <div className="space-y-3">
+      <div className="max-h-[420px] space-y-3 overflow-y-auto pr-1">
         {agenda.map((event) => (
           <article key={event.id} className="rounded-2xl border border-white/10 bg-white/5 p-4">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">

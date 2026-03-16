@@ -1,7 +1,7 @@
 import { Badge } from './ui/Badge';
 import { SparkIcon } from './ui/icons';
 import { SectionCard } from './ui/SectionCard';
-
+//a modifier, zone pour la position des planetes, et une autre pour les aspects majeurs a venir.
 export function TransitCard({ className = '', transits }) {
   return (
     <SectionCard
@@ -9,7 +9,6 @@ export function TransitCard({ className = '', transits }) {
       eyebrow="Astrological transits"
       title="Current planetary positions"
       icon={<SparkIcon className="h-5 w-5" />}
-      footer={transits.disclaimer}
     >
       <div className="space-y-5">
         <div className="grid gap-3 sm:grid-cols-2">
