@@ -5,5 +5,5 @@ dist
 .env
 .env.*.local
 npm-debug.log*
-./backend/.env
+backend/.env
 
