@@ -66,6 +66,40 @@ export function useAstronomyDashboard() {
     }
   }, []);
 
+  const setLocation = useCallback(async (newLocation) => {
+    setState((prev) => ({
+      ...prev,
+      loading: true,
+      refreshing: false,
+      error: null,
+    }));
+
+    try {
+      const [weather, astronomy] = await Promise.all([
+        getWeatherBundle(newLocation),
+        buildAstronomyBundle(newLocation),
+      ]);
+
+      const payload = { location: newLocation, weather, astronomy };
+      saveDashboardCache(payload);
+
+      setState({
+        loading: false,
+        refreshing: false,
+        error: null,
+        source: 'manual',
+        cachedAt: new Date().toISOString(),
+        ...payload,
+      });
+    } catch (error) {
+      setState((prev) => ({
+        ...prev,
+        loading: false,
+        error: error?.message || 'Failed to load data for new location.',
+      }));
+    }
+  }, []);
+
   useEffect(() => {
     loadDashboard();
   }, [loadDashboard]);
@@ -73,5 +107,6 @@ export function useAstronomyDashboard() {
   return {
     ...state,
     refresh: () => loadDashboard({ silent: true }),
+    setLocation,
   };
 }
